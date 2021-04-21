@@ -1,4 +1,4 @@
-# TP - Que Me Pongo 
+# TP - Que Me Pongo - Grupo 16
 
 ## [QMP1] Qué Me Pongo - Primera iteración
 
