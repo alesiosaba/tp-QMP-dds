@@ -6,4 +6,6 @@ https://docs.google.com/document/d/1k1f-9AuIohlBGB2soSNePJ6jLxM37_tZeSD-hW_esIQ
 
 ### Diagrama de Clases
 
-https://lucid.app/lucidchart/invitations/accept/inv_578506ef-7827-4bdb-be9c-a2cc5682bc38?viewport_loc=-828%2C963%2C3488%2C1598%2C0_0
+https://lucid.app/lucidchart/invitations/accept/inv_d42dac4a-18d1-4a8a-9ee5-7b62a1830813
+
+![Que Me Pongo - Primera Iteración](https://user-images.githubusercontent.com/62452207/115774392-e6060a00-a387-11eb-879f-5273925c30fc.png)
