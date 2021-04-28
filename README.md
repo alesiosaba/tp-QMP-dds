@@ -4,8 +4,14 @@
 
 https://docs.google.com/document/d/1k1f-9AuIohlBGB2soSNePJ6jLxM37_tZeSD-hW_esIQ
 
+## [QMP2] Qué Me Pongo - Segunda iteración
+
+https://docs.google.com/document/d/10j6XB9zIhl5xox2xBEDEFsgPmueHMkyvLSHcLxl_27Y/edit#
+
 ### Diagrama de Clases
 
-https://lucid.app/lucidchart/invitations/accept/inv_d42dac4a-18d1-4a8a-9ee5-7b62a1830813
+#### Primera Iteración
 
-![Que Me Pongo - Primera Iteración](https://user-images.githubusercontent.com/62452207/115774392-e6060a00-a387-11eb-879f-5273925c30fc.png)
+![QMP1 - Diagrama de clases](https://user-images.githubusercontent.com/62452207/116478174-105a3a80-a854-11eb-9a38-71b039b855b7.png)
+
+#### Segunda iteración
