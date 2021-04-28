@@ -1,0 +1,37 @@
+@startuml
+
+class Prenda {
+    tipoPrenda
+    material
+    colorPrincipal
+    colorSecundario
+
+    categoria()
+}
+
+class TipoPrenda {
+    categoria
+
+    categoria()
+}
+
+enum Categoria {
+    
+}
+
+enum Material {
+
+}
+
+class Color {
+    rojo
+    verde
+    azul
+}
+
+Prenda --> TipoPrenda
+Prenda --> Material
+Prenda --> "  1,2  " Color
+TipoPrenda --> Categoria
+
+@enduml
