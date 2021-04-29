@@ -91,3 +91,35 @@ class Borrador {
         return new Prenda(tipoPrenda,material,colorPrincipal,colorSecundario,trama)
 }
 --------------------------------------------------------------------------------------------------------------
+class Sugerencia {
+    Uniforme uniformeSugerido
+
+    constructor(uniformeSugerido)
+        this.uniformeSugerido = requireNonNull(uniformeSugerido, "Falta el uniforme sugerido")
+}
+--------------------------------------------------------------------------------------------------------------
+class Uniforme {
+    Prenda parteSuperior
+    Prenda parteInferior
+    Prenda calzado
+
+    constructor(parteSuperior,parteInferior,calzado)
+        this.parteSuperior = requireNonNull(parteSuperior, "Falta la parte superior")
+        this.parteInferior = requireNonNull(parteSuperior, "Falta la parte inferior")
+        this.calzado = requireNonNull(calzado, "Falta el calzado")
+}
+--------------------------------------------------------------------------------------------------------------
+class Institucion {
+    String nombre
+    Uniforme uniforme
+
+    constructor(nombre,uniforme)
+        if usuario.esAdmin(){
+            this.nombre = requireNonNull(nombre,"Falta el nombre de la institucion")
+            this.Uniforme = requireNonNull(uniforme,"Falta el uniforme de la institucion")
+        }
+}
+--------------------------------------------------------------------------------------------------------------
+
+
+

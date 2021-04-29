@@ -5,22 +5,30 @@ class Prenda {
     material
     colorPrincipal
     colorSecundario
+    trama
 
     categoria()
 }
 
 class TipoPrenda {
+    tipoDePrenda
     categoria
 
     categoria()
 }
 
 enum Categoria {
-    
+    PARTE_SUPERIOR,
+    CALZADO,
+    PARTE_INFERIOR,
+    ...
 }
 
 enum Material {
-
+    CUERO,
+    JEAN,
+    ALGODON,
+    ...
 }
 
 class Color {
@@ -29,9 +37,59 @@ class Color {
     azul
 }
 
+enum Trama {
+    LISO,
+    RAYADO,
+    ESTAMPADO,
+    ...
+}
+
+enum TipoDePrenda {
+    ZAPATO,
+    REMERA,
+    CAMISA,
+    ...
+}
+
+class Borrador {
+    tipoPrenda
+    material
+    colorPrincipal
+    colorSecundario
+    trama
+
+    cargarTipoDePrenda(tipo)
+    cargarDatosRestantes(colorP,colorS,material,trama)
+    crearPrenda()
+}
+
+class Sugerencia {
+    uniformeSugerido
+}
+
+class Uniforme {
+    parteSuperior
+    parteInferior
+    calzado
+}
+
+class Institucion {
+    nombre
+    uniforme
+}
+
+
 Prenda --> TipoPrenda
 Prenda --> Material
-Prenda --> "  1,2  " Color
+Prenda --> "  1,2  "Color
 TipoPrenda --> Categoria
+Prenda --> Trama
+TipoPrenda --> TipoDePrenda
+Borrador ..> Prenda
+Sugerencia --> Uniforme
+Uniforme --> Prenda
+Uniforme --> Prenda
+Uniforme --> Prenda
+Institucion --> Uniforme
 
 @enduml
