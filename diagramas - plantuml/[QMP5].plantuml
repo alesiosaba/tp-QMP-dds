@@ -1,65 +1,79 @@
 @startuml
 
-interface CondicionesClimaticas {
-    estadoDelTiempo(String ubicacion)
-    obtenerCondiciones(String condicion)
-}
-
-CondicionesClimaticasAccuWeather ..|> CondicionesClimaticas
-
 class Prenda {
     tipoPrenda
     material
     colorPrincipal
     colorSecundario
     trama
+    criterioUso
 
     categoria()
-    aptaTemperatura(temperaturaActual)
+}
+
+CriterioUso <-- Prenda
+
+enum CriterioUso {
+    VIAJE,
+    ENTRE_CASA,
+    PLAYA,
+    ...
 }
 
 Atuendo --> "  *  " Prenda
 
 class Atuendo {
     prendas
-    aptoParaTemperatura(Integer temperaturaActual)
 }
 
-Guardarropas --> "  *  " Prenda
+Guardarropas --> "*" Prenda
 Guardarropas ..> Atuendo
+Guardarropas --> CriterioUso 
+Guardarropas --> "*" Propuesta
 
 class Guardarropas {
     prendas
+    criterioUso
+    propuestas
 
+    guardarPropuesta(unaPropuesta)
+    aceptarPropuesta(unaPropuesta)
+    rechazarPropuesta(unaPropuesta)
+    agregarPrenda(unaPrenda)
+    quitarPrenda(unaPrenda)
     List<Atuendo> todasLasPosiblesCombinaciones()
 }
 
-AsesorDeImagen ..> CondicionesClimaticas
-AsesorDeImagen ..> Guardarropas
-AsesorDeImagen ..> Atuendo
-
-class AsesorDeImagen {
-    CondicionesClimaticas servicioMeteorologico
-
-    sugerirAtuendo(direccion, guardarropas)
+interface Propuesta {
+    aceptar(unGuardarropa)
+    deshacer(unGuardarropa)
 }
 
-class CondicionesClimaticasAccuWeather {
-    CondicionesClimaticasAccuWeather instancia
-    LocalDateTime ultimaActualizacion
-    AccuWeatherAPI apiClima
-    List<HashMap> condicionesClimaticas
+Propuesta <|.. PropuestaAgregar
+Propuesta <|.. PropuestaQuitar
+Propuesta --> Prenda
 
-    obtenerCondiciones(String condicion)
-    pasoTiempoLimite()
-    estadoDelTiempo(String ubicacion)
-    getInstance()
+class PropuestaAgregar {
+    boolean aceptada
+    Prenda prenda
+    aceptar(unGuardarropa)
+    deshacer(unGuardarropa)
 }
 
-CondicionesClimaticasAccuWeather --> AccuWeatherAPI
+class PropuestaQuitar {
+    boolean aceptada
+    Prenda prenda
+    aceptar(unGuardarropa)
+    deshacer(unGuardarropa)
+}
 
-class AccuWeatherAPI {
-    getWheather(String ciudad)
+Usuario --> "  *  " Guardarropas
+
+class Usuario {
+    List<Guardarropas> guardarropas
+
+    crearGuardarropa(criterioUso, usuariosQueLoComparten)
+    agregarUnGuardarropa(unGuardarropa)
 }
 
 @enduml

@@ -12,6 +12,8 @@ public class Prenda {
     Color color;
     Color colorSecundario;
     List<Prenda> prendas;
+    // lo usamos para filtrar por criterio de uso en los guardarropas
+    CriterioUso criterioUso;
 
     Integer temperatura;
 
@@ -34,4 +36,5 @@ public class Prenda {
     public Boolean aptaTemperatura(Integer tempActual) {
         return this.temperatura < tempActual;
     }
+
 }
